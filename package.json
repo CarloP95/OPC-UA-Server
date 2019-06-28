@@ -1,0 +1,27 @@
+{
+  "name": "opc-ua-server",
+  "version": "1.0.0",
+  "description": "An OPC-UA server that will run in NodeJS environments",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CarloP95/OPC-UA-Server.git"
+  },
+  "keywords": [
+    "opc-ua",
+    "server",
+    "nodejs"
+  ],
+  "author": "carlop95@hotmail.it",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CarloP95/OPC-UA-Server/issues"
+  },
+  "homepage": "https://github.com/CarloP95/OPC-UA-Server#readme",
+  "dependencies": {
+    "node-opcua": "^0.7.4"
+  }
+}
