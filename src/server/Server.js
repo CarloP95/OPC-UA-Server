@@ -1,4 +1,5 @@
 const opc_ua = require('node-opcua');
+const requestData = require('../dataManager/DataManager').requestData;
 
 const server =  new opc_ua.OPCUAServer({
     port: 4334,
@@ -14,9 +15,9 @@ const server =  new opc_ua.OPCUAServer({
 
 function post_initialize() {
 
-    console.log("initialized");
+    requestData('Tmp');
 
-    function construct_my_address_space(server) {
+    function buildAddressSpace(server) {
 
         const addressSpace = server.engine.addressSpace;
         const namespace = addressSpace.getOwnNamespace();
@@ -24,7 +25,7 @@ function post_initialize() {
         // declare a new object
         const device = namespace.addObject({
             organizedBy: addressSpace.rootFolder.objects,
-            browseName: "MyDevice"
+            browseName: "Rpi"
         });
 
         // add some variables
@@ -49,13 +50,9 @@ function post_initialize() {
         namespace.addVariable({
 
             componentOf: device,
-
-            nodeId: "ns=1;b=1020FFAA", // some opaque NodeId in namespace 4
-
+            nodeId: "ns=1;b=1020FFAA",
             browseName: "MyVariable2",
-
             dataType: "Double",
-
             value: {
                 get: function () {
                     return new opc_ua.Variant({dataType: opc_ua.DataType.Double, value: variable2 });
@@ -69,15 +66,14 @@ function post_initialize() {
 
     }
 
-    construct_my_address_space(server);
-
+    buildAddressSpace(server);
 
     server.start(function() {
         console.log("Server is now listening ... ( press CTRL+C to stop)");
-        console.log("port ", server.endpoints[0].port);
+        console.log("Port: ", server.endpoints[0].port);
 
         const endpointUrl = server.endpoints[0].endpointDescriptions()[0].endpointUrl;
-        console.log(" the primary server endpoint url is ", endpointUrl );
+        console.log("The primary server endpoint url is ", endpointUrl );
     });
 
 }
