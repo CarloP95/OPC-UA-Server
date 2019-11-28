@@ -4,7 +4,7 @@ An OPC UA Server in Javascript
 
 ## Installation
 
-To deploy an OPC-UA Server on Android with NodeJS runtime, follow the section Sequence Of Instructions down below.
+To deploy an OPC-UA Server on Android with NodeJS runtime, follow the section [Sequence Of Instructions](#sequence-of-instructions) down below.
 
 Tests has been done on Android 7.1 Nougat with a Sony Xperia Z5 Premium device.
 
