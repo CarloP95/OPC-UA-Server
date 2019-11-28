@@ -4,11 +4,13 @@ An OPC UA Server in Javascript
 
 ## Installation
 
-In the current Use Case, the OPC-UA Server is deployed on an Android Device. To install `node-opcua` package is necessary to satisfy some dependencies. I will make a list below.
+To deploy an OPC-UA Server on Android with NodeJS runtime, follow the section Sequence Of Instructions down below.
+
+Tests has been done on Android 7.1 Nougat with a Sony Xperia Z5 Premium device.
 
 ### Requirements
 
-Make sure to have at least 5 GB of disk space free, it will be necessary to install g++, needed to compile `deasync` library that rely on C++.
+Make sure to have at least 5 GB of disk space free, it will be necessary to install g++, needed to compile `deasync` library that rely on C++. Also you will have to install the app `Termux`.
 
 ### Sequence of Instructions
 Make sure to have `Termux` installed. Then enter Termux and start typing these commands:
